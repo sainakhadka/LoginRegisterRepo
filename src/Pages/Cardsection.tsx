@@ -29,46 +29,53 @@ const CardsSection: React.FC = () => {
         </h2>
 
         {/* Register Cards row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-0.5 justify-items-center mb-12">
-          {cards.map((card, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center bg-white rounded-xl shadow-md p-6 w-full max-w-xs hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Image */}
-              <div className="w-24 h-24 mb-4 rounded-md overflow-hidden">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 justify-items-center mb-12">
+  {cards.map((card, index) => (
+    <div
+      key={index}
+      className="flex items-center justify-between bg-white rounded-lg shadow-sm px-4 py-3 w-full max-w-sm hover:shadow-md transition-shadow duration-300"
+    >
+      {/* Image */}
+      <div className="w-14 h-14 rounded-md overflow-hidden">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-              {/* Text */}
-              <h3 className={`text-xl font-semibold ${card.color} mb-4`}>
-                {card.title}
-              </h3>
+      {/* Text */}
+      <h3 className={`text-lg font-semibold ${card.color}`}>
+        {card.title}
+      </h3>
 
-              {/* Arrow with background div */}
-              <div className="w-10 h-10 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-[#154D71]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Arrow */}
+      <div className="w-9 h-9 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-[#154D71]"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M5 12h12"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M13 6l6 6-6 6"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  ))}
+</div>
+
 
         {/* Login Heading */}
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-6 text-[#154D71]">
@@ -76,46 +83,53 @@ const CardsSection: React.FC = () => {
         </h2>
 
         {/* Login Cards row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-items-center">
-          {loginCards.map((card, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center bg-white rounded-xl shadow-md p-6 w-full max-w-xs hover:shadow-xl transition-shadow duration-300"
-            >
-              {/* Image */}
-              <div className="w-24 h-24 mb-4 rounded-md overflow-hidden">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 justify-items-center">
+  {loginCards.map((card, index) => (
+    <div
+      key={index}
+      className="flex items-center justify-between bg-white rounded-lg shadow-sm px-4 py-3 w-full max-w-sm hover:shadow-md transition-shadow duration-300"
+    >
+      {/* Image */}
+      <div className="w-14 h-14 rounded-md overflow-hidden">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-full object-cover"
+        />
+      </div>
 
-              {/* Text */}
-              <h3 className={`text-xl font-semibold ${card.color} mb-4`}>
-                {card.title}
-              </h3>
+      {/* Text */}
+      <h3 className={`text-lg font-semibold ${card.color}`}>
+        {card.title}
+      </h3>
 
-              {/* Arrow with background div */}
-              <div className="w-10 h-10 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 text-[#154D71]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Arrow */}
+      <div className="w-9 h-9 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5 text-[#154D71]"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M5 12h12"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M13 6l6 6-6 6"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
+  ))}
+</div>
+
       </div>
     </section>
   );
