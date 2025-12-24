@@ -23,7 +23,7 @@ const CardsSection: React.FC = () => {
     },
   ];
 
-  // Login cards (no routing yet)
+  // Login cards 
   const loginCards = [
     { title: "As Student", color: "text-blue-600", img: studentL },
     { title: "As Mentor", color: "text-blue-600", img: mentorL },
@@ -97,52 +97,67 @@ const CardsSection: React.FC = () => {
         </h2>
 
         {/* Login Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 justify-items-center">
-          {loginCards.map((card, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-between bg-white rounded-lg shadow-sm px-4 py-3 w-full max-w-sm hover:shadow-md transition-shadow duration-300"
-            >
-              {/* Image */}
-              <div className="w-14 h-14 rounded-md overflow-hidden">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
+         {/* Login Cards */}
+<div className="grid grid-cols-1 sm:grid-cols-3 gap-3 justify-items-center">
+  {loginCards.map((card, index) => {
+    // Define path for each login card
+    let path = "";
+    if (card.title === "As Student") path = "/login/student";
+    else if (card.title === "As Mentor") path = "/login/mentor";
+    else if (card.title === "As Admin") path = "/login/admin";
 
-              {/* Text */}
-              <h3 className={`text-lg font-semibold ${card.color}`}>
-                {card.title}
-              </h3>
-
-              {/* Arrow (no route yet) */}
-              <div className="w-9 h-9 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 text-[#154D71]"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                >
-                  <path
-                    d="M5 12h12"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M13 6l6 6-6 6"
-                    stroke="currentColor"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-            </div>
-          ))}
+    return (
+      <div
+        key={index}
+        className="flex items-center justify-between bg-white rounded-lg shadow-sm px-4 py-3 w-full max-w-sm hover:shadow-md transition-shadow duration-300"
+      >
+        {/* Image */}
+        <div className="w-14 h-14 rounded-md overflow-hidden">
+          <img
+            src={card.img}
+            alt={card.title}
+            className="w-full h-full object-cover"
+          />
         </div>
+
+        {/* Text */}
+        <h3 className={`text-lg font-semibold ${card.color}`}>
+          {card.title}
+        </h3>
+
+        {/* Arrow Link */}
+        <Link
+          to={path}
+          target="_blank" // remove if you want it in the same tab
+          rel="noopener noreferrer"
+          className="w-9 h-9 flex items-center justify-center bg-[#FFF9AF] rounded-full hover:bg-[#FFE066] transition-colors cursor-pointer"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5 text-[#154D71]"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M5 12h12"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M13 6l6 6-6 6"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      </div>
+    );
+  })}
+</div>
+
       </div>
     </section>
   );
